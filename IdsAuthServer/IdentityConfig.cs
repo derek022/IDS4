@@ -5,7 +5,7 @@ using Shared;
 
 namespace IDS4;
 
-public static class Config
+public static class IdentityConfig
 {
     public static IEnumerable<Client> Clients = new[]
     {
@@ -53,8 +53,7 @@ public static class Config
         {
             Name = "sample_api",
             Description = "Sample API"
-        },
-        new ApiScope()
+        }
     };
 
     public static IEnumerable<IdentityResource> IdentityResources = new IdentityResource[]
@@ -69,7 +68,7 @@ public static class Config
         {
             SubjectId = "1",
             Username = "admin",
-            Password = "password"
+            Password = "1q2w3E*"
         }
     };
 }

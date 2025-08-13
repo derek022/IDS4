@@ -9,10 +9,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddOpenApi();
 builder.Services.AddIdentityServer()
     .AddDeveloperSigningCredential()
-    .AddInMemoryClients(Config.Clients)
-    .AddInMemoryApiScopes(Config.ApiScopes)
-    .AddInMemoryIdentityResources(Config.IdentityResources)
-    .AddTestUsers(Config.Users);
+    .AddInMemoryClients(IdentityConfig.Clients)
+    .AddInMemoryApiScopes(IdentityConfig.ApiScopes)
+    .AddInMemoryIdentityResources(IdentityConfig.IdentityResources)
+    .AddTestUsers(IdentityConfig.Users);
 
 var app = builder.Build();
 app.UseHttpsRedirection();

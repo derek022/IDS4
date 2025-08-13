@@ -4,14 +4,14 @@ using Shared;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddRazorPages();
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultScheme = "Cookies";
         options.DefaultChallengeScheme = "oidc";
     })
     .AddCookie("Cookies")
-    .AddOpenIdConnect(options =>
+    .AddOpenIdConnect("oidc",options =>
     {
         options.Authority = UrlOptions.IdentityUrl;
         options.ClientId = "sample_mvc_client";
